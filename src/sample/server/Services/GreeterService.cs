@@ -1,13 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Grpc.Core;
+using Krondev.Greeter;
 using Microsoft.Extensions.Logging;
+using Status = Krondev.Greeter.Status;
 
 namespace server
 {
-    public class GreeterService : Greeter.GreeterBase
+    public class GreeterService : 
+        Krondev.Greeter.GreeterService.GreeterServiceBase
     {
         private readonly ILogger<GreeterService> _logger;
         public GreeterService(ILogger<GreeterService> logger)
@@ -19,7 +19,8 @@ namespace server
         {
             return Task.FromResult(new HelloReply
             {
-                Message = "Hello " + request.Name
+                Message = "Hello " + request.Name,
+                Status = Status.Success
             });
         }
     }
