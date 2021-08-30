@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "Greeter/Messages/HelloRequest.proto";
+import "Greeter/Messages/HelloReply.proto";
+
+package krondev.protobuf.Greeter;
+option csharp_namespace = "Krondev.Greeter";
+
+service GreeterService {
+  rpc SayHello (HelloRequest) returns (HelloReply);
+}

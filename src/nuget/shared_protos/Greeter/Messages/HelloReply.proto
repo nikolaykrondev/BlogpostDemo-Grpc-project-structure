@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "Greeter/Enums/Status.proto";
+
+package krondev.protobuf.Greeter;
+option csharp_namespace = "Krondev.Greeter";
+
+message HelloReply {
+  string message = 1;
+  krondev.protobuf.Greeter.Status Status = 2;
+}

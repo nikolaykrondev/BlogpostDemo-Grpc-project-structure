@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package krondev.protobuf.Greeter;
+option csharp_namespace = "Krondev.Greeter";
+
+message HelloRequest {
+  string name = 1;
+}
